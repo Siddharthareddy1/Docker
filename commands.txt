@@ -1,0 +1,5 @@
+cd docker-form-app
+
+docker build -t form-app .
+
+docker run -p 5000:5000 form-app
