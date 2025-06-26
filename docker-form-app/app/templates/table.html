@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+  <head>
+    <title>User Table</title>
+  </head>
+  <body>
+    <h2>Stored Users</h2>
+    <table border="1">
+      <tr><th>Name</th><th>Age</th></tr>
+      {% for name, age in users %}
+      <tr><td>{{ name }}</td><td>{{ age }}</td></tr>
+      {% endfor %}
+    </table>
+    <p><a href="/">Go Back to Form</a></p>
+  </body>
+</html>
