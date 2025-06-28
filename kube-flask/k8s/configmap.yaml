@@ -1,0 +1,7 @@
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kube-flask-config
+data:
+  greeting: "Hello from ConfigMap in Kubernetes!"
