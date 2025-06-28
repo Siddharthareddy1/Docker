@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-flask-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kube-flask
+  template:
+    metadata:
+      labels:
+        app: kube-flask
+    spec:
+      containers:
+      - name: flask-container
+        image: kube-flask:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5000
+        env:
+        - name: GREETING
+          valueFrom:
+            configMapKeyRef:
+              name: kube-flask-config
+              key: greeting
